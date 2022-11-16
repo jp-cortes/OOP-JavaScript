@@ -1,3 +1,5 @@
+import { Comments } from './Comments';
+
 class Users {
     constructor({
     name,
@@ -32,7 +34,15 @@ class Users {
 
         this._name = newName;
     }
-    // this._name = newName;
+    
 }
+    newComment(commentContent) {
+        const comment = new Comments({
+            content: commentContent,
+            name: this.name,
+        });
+        comment.addNewComments();
+}
+
 };
 export { Users };

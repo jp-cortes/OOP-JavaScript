@@ -1,9 +1,14 @@
-import { Courses } from "./Courses/index.js";
-import { LearningPath } from "./LearningPath/index.js";
-import { Users } from "./Users/index.js";
-import { Student } from "./Prototypes/index.js";
-import Comments from "./Comments/index.js";
-import { CourseClass } from './Video/index.mjs';
+import { Courses } from "./Courses.js";
+import { LearningPath } from "./LearningPath.js";
+import { Users } from "./Users.js";
+import { Student } from "./Prototypes.js";
+import { Comments } from "./Comments.js";
+import { CourseClass } from './Video.js';
+import { BasicStudent } from './BasicStudent.js';
+import { ExpertStudent } from './ExpertStudent.js';
+import { FreeStudent } from './FreeStudent.js';
+
+
 
 const class10 = new CourseClass({name: "OPP JavaScript", videoID: "ujhvagdv",})
 class10.playVideo();
@@ -12,22 +17,26 @@ class10.pauseVideo();
 const htmlAndCssBasics = new Courses({
     name: "HTML and CSS basics", 
     teacher: "Diego DeGranda", 
-    lessons: 30
+    lessons: 30,
+    isFree: true,
 });
 const javascriptBasics = new Courses({
     name: "JavaScript and V8 engine", 
     teacher: "Diego DeGranda", 
-    lessons: 20
+    lessons: 20,
+    isFree: true,
 });
 const reactJS = new Courses({
     name: "Create your first REACT APP", 
     teacher: "Juan David Castro Gallego", 
-    lessons: 37
+    lessons: 37,
+    isFree: false,
 });
 const createYourOwnCryptoCurrency = new Courses({
     name: "Create your own Crypto currency", 
     teacher: "Diana Ocando", 
-    lessons: 20
+    lessons: 20,
+    lang: "English",
 });
 
 
@@ -56,7 +65,7 @@ const fullStackJavascript = new LearningPath({
 
 
 
-const jhonnyCage = new Users({
+const jhonnyCage = new FreeStudent('Student',{
     name: "Jhonny Cage",
     username: "Jcage",
     email: "jhonny@mortalK.com",
@@ -66,8 +75,6 @@ const jhonnyCage = new Users({
         blockchainSchool
     ],
 });
-console.log(jhonnyCage);
-console.log(jhonnyCage.name);
 
 //the "_" i s used to  ask internally not to modify
 console.log(jhonnyCage._name);

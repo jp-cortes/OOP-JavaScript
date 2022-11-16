@@ -8,7 +8,7 @@ function Student(name, age, approvedCourses) {
 Student.prototype.approveCourse = function (newCourse) {
     let old = this.approvedCourses.includes("Python");
     if(old) {
-        console.log('ya tomaste el curso de Python')
+        console.log('You already know Python')
     }
     this.approvedCourses.push(newCourse);
 }
